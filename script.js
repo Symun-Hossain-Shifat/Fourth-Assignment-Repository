@@ -15,3 +15,25 @@ console.log(mainsection);
 let interviewList = [];
 let rejectedList = [];
 
+// start function call
+function calculateJob(){
+totalJob.innerText = maincontainer.children.length;
+InterviewJob.innerText = interviewList.length;
+rejectedJob.innerText = rejectedList.length;
+}
+calculateJob();
+
+ setText2.innerText = maincontainer.children.length;
+
+function changebtn(id){
+  allbtn.classList.remove('bg-blue-600','text-white')
+  interviewbtn .classList.remove('bg-blue-600','text-white')
+  rejectedbtn .classList.remove('bg-blue-600','text-white')
+
+  allbtn.classList.add('bg-white','text-black')
+   interviewbtn .classList.add('bg-white','text-black')
+ rejectedbtn.classList.add('bg-white','text-black')
+
+ id.classList.remove('bg-white','text-black')
+ id.classList.add('bg-blue-600','text-white')
+}
