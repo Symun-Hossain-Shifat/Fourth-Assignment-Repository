@@ -101,6 +101,7 @@ mainsection.addEventListener("click",function(event){
 const emptysection =document.getElementById('Emptysection');
 allbtn.addEventListener("click",function(){
   setText.innerText = "";
+ 
   emptysection.classList.add('hidden');
  mainsection.classList.remove("hidden");
  const allcards = maincontainer.querySelectorAll('.parent > div');
@@ -153,3 +154,37 @@ rejectedbtn .addEventListener("click",function(){
  }
   
 })
+
+
+// delete the cards
+maincontainer.addEventListener('click',function(event){
+  if(event.target.classList.contains('secondone')){
+   const parentall = event.target.parentNode.parentNode;
+    parentall.remove();
+   
+    calculateJob();
+     setText2.innerText = maincontainer.children.length;
+     const firstcheck = parentall.querySelector('.appliedbtn');
+     if(firstcheck && firstcheck.innerText.trim() === "INTERVIEW" ){
+      if(interviewList.length > 0){
+      interviewList.pop();
+      }
+      calculateJob();
+     }else if(firstcheck && firstcheck.innerText.trim() === "REJECTED"){
+      if(rejectedList.length > 0){
+        rejectedList.pop();
+      }
+      calculateJob();
+     }
+ 
+  }
+  
+})
+
+ 
+
+
+
+
+
+
